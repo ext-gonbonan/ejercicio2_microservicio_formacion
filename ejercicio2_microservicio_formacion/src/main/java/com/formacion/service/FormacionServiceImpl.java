@@ -35,23 +35,31 @@ public class FormacionServiceImpl implements FormacionService{
 
     @Override
     public List<Formacion> altaFormacion(Formacion formacion) {
-        Curso curso = mapFormacionToCurso(formacion);
-        
-        // Verificar si el curso ya existe
-        Curso cursoExistente = restClient.get() // inicia la construcción de una petición HTTP GET
-                .uri(url + "/" + curso.getCodCurso()) // establece la URL a la que se enviará la petición GET
+    	// Primero, verificamos si ya existe un curso con el mismo nombre
+        Curso[] cursos = restClient.get() // inicia la construcción de una petición HTTP GET
+                .uri(url) // establece la URL a la que se enviará la petición GET
                 .retrieve() // inicia el proceso de envío de la petición y la recuperación de la respuesta
-                .body(Curso.class); // el cuerpo de la respuesta debe ser convertido a un objeto 'Curso'
+                .body(Curso[].class); // el cuerpo de la respuesta debe ser convertido a un objeto array 'Curso'
         
-        if (cursoExistente == null) {
-        	restClient.post() // inicia la construcción de una petición HTTP POST
-				.uri(url) // establece la URL a la que se enviará la petición POST
-				.accept(MediaType.APPLICATION_JSON) // indica que el cliente acepta respuestas en formato JSON
-				.body(curso) // establece el cuerpo de la petición POST con el objeto 'curso'
-				.retrieve() // inicia el proceso de envío de la petición y la recuperación de la respuesta
-				.toBodilessEntity(); // indica que no esperamos un cuerpo en la respuesta del servidor
+        boolean cursoExiste = false;
+        for (Curso c : cursos) {
+            if (c.getNombre().equalsIgnoreCase(formacion.getCurso())) {
+                cursoExiste = true;
+                break;
+            }
         }
-
+        
+        // Si no existe un curso con el mismo nombre, procedemos a crearlo
+        if (!cursoExiste) {
+            Curso nuevoCurso = mapFormacionToCurso(formacion);
+            restClient.post() // inicia la construcción de una petición HTTP POST
+                .uri(url) // establece la URL a la que se enviará la petición POST
+                .accept(MediaType.APPLICATION_JSON)  // indica que el cliente acepta respuestas en formato JSON
+                .body(nuevoCurso)  // establece el cuerpo de la petición POST con el objeto 'curso'
+                .retrieve() // inicia el proceso de envío de la petición y la recuperación de la respuesta
+                .toBodilessEntity();  // indica que no esperamos un cuerpo en la respuesta del servidor
+        }
+        
         return obtenerFormaciones();
     }
     
