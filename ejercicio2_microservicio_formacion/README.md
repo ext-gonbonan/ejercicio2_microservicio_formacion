@@ -47,12 +47,8 @@ GET http://localhost:8080/formacion
 
 #### Crear Formación
 POST http://localhost:9000/formacion
-  Content-Type: application/json
-  {
-  "curso": "Introducción a Vaadin",
-  "asignaturas": 17,
-  "precio": 299.99
-  }
+![imagen](https://github.com/ext-gonbonan/ejercicio2_microservicio_formacion/assets/173496006/4a7e7cb3-1ae0-4690-93f6-159dadc4de09)
+
 
 ## Dependencias
 
