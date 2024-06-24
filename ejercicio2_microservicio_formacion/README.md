@@ -23,7 +23,7 @@ Este microservicio forma parte de un sistema de gestión educativa y se encarga 
 
 1. Asegúrate de tener instalado Java 17 y Maven.
 2. Clona este repositorio:
-  - https://github.com/ext-gonbonan/ejercicio1_desarrollo_microservicio_crud_cursos.git
+  - https://github.com/ext-gonbonan/ejercicio2_microservicio_formacion.git
 
 ## Ejecución
 
@@ -53,3 +53,4 @@ POST http://localhost:9000/formacion
 ## Dependencias
 
 Este microservicio depende del microservicio de cursos. Asegúrate de que esté en ejecución y accesible antes de usar este servicio.
+- https://github.com/ext-gonbonan/ejercicio1_desarrollo_microservicio_crud_cursos.git
