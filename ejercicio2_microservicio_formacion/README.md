@@ -42,6 +42,8 @@ Este microservicio forma parte de un sistema de gestión educativa y se encarga 
 
 #### Obtener Formaciones
 GET http://localhost:8080/formacion
+![imagen](https://github.com/ext-gonbonan/ejercicio2_microservicio_formacion/assets/173496006/c6686a73-5043-4d80-b8bf-1356769e1793)
+
 
 #### Crear Formación
 POST http://localhost:9000/formacion
