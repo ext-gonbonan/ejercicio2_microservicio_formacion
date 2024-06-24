@@ -42,6 +42,7 @@ public class FormacionServiceImpl implements FormacionService{
                 .body(Curso[].class); // el cuerpo de la respuesta debe ser convertido a un objeto array 'Curso'
         
         boolean cursoExiste = false;
+        // buscamos dentro del array cursos un curso con el mismo nombre
         for (Curso c : cursos) {
             if (c.getNombre().equalsIgnoreCase(formacion.getCurso())) {
                 cursoExiste = true;
