@@ -23,12 +23,13 @@ Este microservicio forma parte de un sistema de gestión educativa y se encarga 
 
 1. Asegúrate de tener instalado Java 17 y Maven.
 2. Clona este repositorio:
-
+  - https://github.com/ext-gonbonan/ejercicio1_desarrollo_microservicio_crud_cursos.git
 
 ## Ejecución
 
 1. Asegúrate de que el microservicio de cursos esté en ejecución.
 2. Ejecuta la aplicación:
+   - mvn spring-boot:run
 
 ## Uso
 
@@ -40,13 +41,14 @@ Este microservicio forma parte de un sistema de gestión educativa y se encarga 
 ### Ejemplos de Peticiones
 
 #### Obtener Formaciones
+GET http://localhost:8080/formacion
 
 #### Crear Formación
-POST http://localhost:8080/formacion
+POST http://localhost:9000/formacion
 Content-Type: application/json
 {
-"curso": "Introducción a Spring Boot",
-"asignaturas": 6,
+"curso": "Introducción a Vaadin",
+"asignaturas": 17,
 "precio": 299.99
 }
 
