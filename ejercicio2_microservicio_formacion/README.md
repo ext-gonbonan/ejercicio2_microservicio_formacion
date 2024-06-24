@@ -47,12 +47,12 @@ GET http://localhost:8080/formacion
 
 #### Crear Formación
 POST http://localhost:9000/formacion
-Content-Type: application/json
-{
-"curso": "Introducción a Vaadin",
-"asignaturas": 17,
-"precio": 299.99
-}
+  Content-Type: application/json
+  {
+  "curso": "Introducción a Vaadin",
+  "asignaturas": 17,
+  "precio": 299.99
+  }
 
 ## Dependencias
 
