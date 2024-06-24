@@ -64,7 +64,7 @@ public class FormacionServiceImpl implements FormacionService{
     }
     
     /**
-     * Convierte un objeto Curso a un objeto Formacion.
+     * Convierte un objeto Curso a un objeto Formacion
      */
     private Formacion mapCursoToFormacion(Curso curso) {
         int asignaturas;
@@ -85,7 +85,7 @@ public class FormacionServiceImpl implements FormacionService{
     }
 
     /**
-     * Convierte un objeto Formacion a un objeto Curso.
+     * Convierte un objeto Formacion a un objeto Curso
      */
     private Curso mapFormacionToCurso(Formacion formacion) {
         // Calcula la duración basada en el número de asignaturas
@@ -104,7 +104,7 @@ public class FormacionServiceImpl implements FormacionService{
     }
 
     /**
-     * Genera el código del curso basado en el nombre y la duración.
+     * Genera el código del curso basado en el nombre y la duración
      */
     private String generarCodigoCurso(String nombreCurso, int duracion) {
         // Toma los primeros 3 caracteres del nombre del curso
