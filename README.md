@@ -62,7 +62,7 @@ Ve a http://localhost:8080/swagger-ui.html en tu navegador.
 La configuración de Swagger se realiza en el archivo application.properties. A continuación, se muestra un ejemplo de configuración:
 
 #### Configuración Spring Doc
-    springdoc.packages-to-scan=com.curso.controller,com.formacion.controller
+    springdoc.packages-to-scan=com.formacion.controller
     springdoc.paths-to-match=/**
 
 #### Anotaciones en Controladores
