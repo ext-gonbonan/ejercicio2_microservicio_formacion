@@ -10,6 +10,7 @@ Este microservicio forma parte de un sistema de gestión educativa y se encarga 
 - Creación de nuevas formaciones
 - Cálculo automático de asignaturas basado en la duración del curso
 - Generación de códigos de curso a partir del nombre de la formación
+- Documentación automática de la API mediante Swagger.
 
 ## Tecnologías
 
@@ -18,6 +19,7 @@ Este microservicio forma parte de un sistema de gestión educativa y se encarga 
 - Spring RestClient
 - Maven
 - Lombok
+- Springdoc OpenAPI
 
 ## Configuración
 
@@ -48,6 +50,23 @@ GET http://localhost:8080/formacion
 #### Crear Formación
 POST http://localhost:9000/formacion
 ![imagen](https://github.com/ext-gonbonan/ejercicio2_microservicio_formacion/assets/173496006/4a7e7cb3-1ae0-4690-93f6-159dadc4de09)
+
+
+## Documentación de la API
+La documentación de la API está disponible mediante Swagger. Para acceder a ella, sigue estos pasos:
+
+Asegúrate de que la aplicación esté en ejecución.
+Ve a http://localhost:8080/swagger-ui.html en tu navegador.
+
+###Configuración de Swagger
+La configuración de Swagger se realiza en el archivo application.properties. A continuación, se muestra un ejemplo de configuración:
+
+- Configuración Spring Doc
+springdoc.packages-to-scan=com.curso.controller,com.formacion.controller
+springdoc.paths-to-match=/**
+
+- Anotaciones en Controladores
+Los controladores están anotados con @Operation y @Parameter para documentar automáticamente los endpoints. 
 
 
 ## Dependencias
